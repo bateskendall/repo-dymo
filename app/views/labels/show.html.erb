@@ -1,7 +1,19 @@
+<p id="notice"><%= notice %></p>
+
 <p>
-    <strong>Labels: </strong>
-    <%= @labels.each do |l| %>
-      <%= l.name %>
-    <% end %>
-  </p>
-<%= link_to 'back', root_url %>
+  <strong>Name:</strong>
+  <%= @label.name %>
+</p>
+
+<p>
+  <strong>Color:</strong>
+  <%= @label.color %>
+</p>
+
+<p>
+  <strong>Default:</strong>
+  <%= @label.default %>
+</p>
+
+<%= link_to 'Edit', edit_label_path(@label) %> |
+<%= link_to 'Back', labels_path %>

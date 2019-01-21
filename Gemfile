@@ -10,7 +10,7 @@ gem 'turbolinks',   '5.0.1'
 gem 'jbuilder',     '2.7.0'
 gem "octokit"
 gem "pry"
-gem "dotenv"
+gem "dotenv-rails"
 gem "bootsnap"
 
 group :development, :test do
