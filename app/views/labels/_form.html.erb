@@ -12,8 +12,18 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :repo_name %>
-    <%= form.text_field :name %>
+    <%= form.label :source_repo %>
+    <%= form.text_field :source_name %>
+  </div>
+  
+  <div class="field">
+    <%= form.label :username %>
+    <%= form.text_field :username %>
+  </div>
+  
+  <div class="field">
+    <%= form.label :target_repo %>
+    <%= form.text_field :target_name %>
   </div>
 
   <div class="actions">

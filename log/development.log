@@ -5405,3 +5405,955 @@ Processing by LabelsController#index as HTML
 Completed 200 OK in 32ms (Views: 30.8ms | ActiveRecord: 0.3ms)
 
 
+Started GET "/" for 172.58.224.117 at 2019-01-22 01:17:54 +0000
+Cannot render console from 172.58.224.117! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/rvm/gems/ruby-2.4.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by LabelsController#new as HTML
+  Rendering labels/new.html.erb within layouts/application
+  Rendered labels/_form.html.erb (11.8ms)
+  Rendered labels/new.html.erb within layouts/application (13.9ms)
+Completed 200 OK in 192ms (Views: 176.4ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/labels" for 172.58.224.117 at 2019-01-22 01:28:53 +0000
+Cannot render console from 172.58.224.117! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by LabelsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"25RIqeI8dmqW6FLgn4V+KqHTxbpkoRBm2ED8lqnmFqCNqeIAHqlSOWYg9AzAOIrtyFDqsdaRSRYzZb+L1DjQeA==", "label"=>{"source_name"=>"elixir-lang/elixir", "username"=>"bateskendall", "target_name"=>"repo-dymo-labels"}, "commit"=>"Create Label"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/labels_controller.rb:19:in `[]'
+app/controllers/labels_controller.rb:19:in `create'
+Started POST "/labels" for 172.58.224.117 at 2019-01-22 01:33:18 +0000
+Cannot render console from 172.58.224.117! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by LabelsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"25RIqeI8dmqW6FLgn4V+KqHTxbpkoRBm2ED8lqnmFqCNqeIAHqlSOWYg9AzAOIrtyFDqsdaRSRYzZb+L1DjQeA==", "label"=>{"source_name"=>"elixir-lang/elixir", "username"=>"bateskendall", "target_name"=>"repo-dymo-labels"}, "commit"=>"Create Label"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "App:EEx"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "App:Elixir"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "App:Elixir (compiler)"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "App:ExUnit"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "App:IEx"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "App:Logger"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "App:Mix"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "Kind:Bug"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "Kind:Chore"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "Kind:Documentation"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "Kind:Enhancement"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "Kind:Feature"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "Level:Advanced"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "Level:Intermediate"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "Level:Starter"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "Note:Discussion"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "Note:Erlang bug"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "Note:Formatter"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "Note:Needs more info"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "Note:Open for guidance"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "Note:Unresolved"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "Note:Windows"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+Redirected to https://1a04794b32a640308762113aeb521df1.vfs.cloud9.us-east-2.amazonaws.com/labels
+Completed 302 Found in 2897ms (ActiveRecord: 7.8ms)
+
+
+Started GET "/labels" for 172.58.224.117 at 2019-01-22 01:33:21 +0000
+Cannot render console from 172.58.224.117! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by LabelsController#index as HTML
+  Rendering labels/index.html.erb within layouts/application
+  [1m[36mLabel Load (0.7ms)[0m  [1m[34mSELECT "labels".* FROM "labels"[0m
+  ↳ app/views/labels/index.html.erb:16
+  Rendered labels/index.html.erb within layouts/application (17.7ms)
+Completed 200 OK in 40ms (Views: 37.6ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/labels" for 172.58.224.117 at 2019-01-22 01:35:16 +0000
+Cannot render console from 172.58.224.117! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by LabelsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"25RIqeI8dmqW6FLgn4V+KqHTxbpkoRBm2ED8lqnmFqCNqeIAHqlSOWYg9AzAOIrtyFDqsdaRSRYzZb+L1DjQeA==", "label"=>{"source_name"=>"rails/rails", "username"=>"bateskendall", "target_name"=>"repo-dymo-labels"}, "commit"=>"Create Label"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "JRuby"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "MySQL"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "PostgreSQL"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "SQLite"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "With reproduction steps"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "actioncable"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "actionmailbox"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "actionmailer"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "actionpack"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "actiontext"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "actionview"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "activejob"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "activemodel"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "activerecord"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "activestorage"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "activesupport"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "asset pipeline"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "attached PR"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "ci issues"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "docs"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "engines"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "enum"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "good-first-patch"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "i18n"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "more-information-needed"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "needs backport"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "needs feedback"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "needs work"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "onhold"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "openacademy"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+Redirected to https://1a04794b32a640308762113aeb521df1.vfs.cloud9.us-east-2.amazonaws.com/labels
+Completed 302 Found in 4370ms (ActiveRecord: 9.8ms)
+
+
+Started GET "/labels" for 172.58.224.117 at 2019-01-22 01:35:20 +0000
+Cannot render console from 172.58.224.117! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by LabelsController#index as HTML
+  Rendering labels/index.html.erb within layouts/application
+  [1m[36mLabel Load (0.4ms)[0m  [1m[34mSELECT "labels".* FROM "labels"[0m
+  ↳ app/views/labels/index.html.erb:16
+  Rendered labels/index.html.erb within layouts/application (15.0ms)
+Completed 200 OK in 32ms (Views: 30.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 172.58.224.117 at 2019-01-22 01:44:45 +0000
+Cannot render console from 172.58.224.117! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/rvm/gems/ruby-2.4.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by LabelsController#new as HTML
+  Rendering labels/new.html.erb within layouts/application
+  Rendered labels/_form.html.erb (16.4ms)
+  Rendered labels/new.html.erb within layouts/application (19.0ms)
+Completed 200 OK in 182ms (Views: 147.3ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/labels" for 172.58.224.117 at 2019-01-22 01:51:15 +0000
+Cannot render console from 172.58.224.117! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by LabelsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eMd/rAzY7ekLdaBmat2p6ENkjjLVKKjhhT5qbs/GjLAu+tUF8E3Juvu9Boo1YF0vKuehOWcY8ZFuGylzshhKaA==", "label"=>{"source_name"=>"elixir-lang/elixir", "username"=>"bateskendall", "target_name"=>"repo-dymo-labels"}, "commit"=>"Create Label"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "App:EEx"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+Completed 500 Internal Server Error in 197ms (ActiveRecord: 0.9ms)
+
+
+  
+Octokit::UnprocessableEntity (POST https://api.github.com/repos/bateskendall/repo-dymo-labels/labels: 422 - Validation Failed
+Error summary:
+  resource: Label
+  code: already_exists
+  field: name // See: https://developer.github.com/v3/issues/labels/#create-a-label):
+  
+app/models/github_label_cloner.rb:19:in `block in clone_github_labels'
+app/models/github_label_cloner.rb:15:in `map'
+app/models/github_label_cloner.rb:15:in `clone_github_labels'
+app/controllers/labels_controller.rb:22:in `create'
+Started POST "/labels" for 142.255.104.86 at 2019-01-22 04:48:27 +0000
+Cannot render console from 142.255.104.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/rvm/gems/ruby-2.4.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by LabelsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eMd/rAzY7ekLdaBmat2p6ENkjjLVKKjhhT5qbs/GjLAu+tUF8E3Juvu9Boo1YF0vKuehOWcY8ZFuGylzshhKaA==", "label"=>{"source_name"=>"elixir-lang/elixir", "username"=>"bateskendall", "target_name"=>"repo-dymo-labels"}, "commit"=>"Create Label"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "App:EEx"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+Completed 500 Internal Server Error in 226ms (ActiveRecord: 0.9ms)
+
+
+  
+Octokit::UnprocessableEntity (POST https://api.github.com/repos/bateskendall/repo-dymo-labels/labels: 422 - Validation Failed
+Error summary:
+  resource: Label
+  code: already_exists
+  field: name // See: https://developer.github.com/v3/issues/labels/#create-a-label):
+  
+app/models/github_label_cloner.rb:19:in `block in clone_github_labels'
+app/models/github_label_cloner.rb:15:in `map'
+app/models/github_label_cloner.rb:15:in `clone_github_labels'
+app/controllers/labels_controller.rb:22:in `create'
+Started POST "/labels" for 142.255.104.86 at 2019-01-22 04:54:32 +0000
+Cannot render console from 142.255.104.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by LabelsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eMd/rAzY7ekLdaBmat2p6ENkjjLVKKjhhT5qbs/GjLAu+tUF8E3Juvu9Boo1YF0vKuehOWcY8ZFuGylzshhKaA==", "label"=>{"source_name"=>"elixir-lang/elixir", "username"=>"bateskendall", "target_name"=>"repo-dymo-labels"}, "commit"=>"Create Label"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "App:EEx"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+Completed 500 Internal Server Error in 108ms (ActiveRecord: 0.9ms)
+
+
+  
+NameError (uninitialized constant GithubLabelCloner::Labels):
+  
+app/models/github_label_cloner.rb:19:in `block in clone_github_labels'
+app/models/github_label_cloner.rb:15:in `map'
+app/models/github_label_cloner.rb:15:in `clone_github_labels'
+app/controllers/labels_controller.rb:22:in `create'
+Started POST "/labels" for 142.255.104.86 at 2019-01-22 04:54:45 +0000
+Cannot render console from 142.255.104.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by LabelsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eMd/rAzY7ekLdaBmat2p6ENkjjLVKKjhhT5qbs/GjLAu+tUF8E3Juvu9Boo1YF0vKuehOWcY8ZFuGylzshhKaA==", "label"=>{"source_name"=>"elixir-lang/elixir", "username"=>"bateskendall", "target_name"=>"repo-dymo-labels"}, "commit"=>"Create Label"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "App:EEx"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "App:EEx"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:19
+Completed 500 Internal Server Error in 112ms (ActiveRecord: 1.0ms)
+
+
+  
+NameError (undefined local variable or method `flash' for #<GithubLabelCloner:0x0000000143b128>):
+  
+app/models/github_label_cloner.rb:20:in `block in clone_github_labels'
+app/models/github_label_cloner.rb:15:in `map'
+app/models/github_label_cloner.rb:15:in `clone_github_labels'
+app/controllers/labels_controller.rb:22:in `create'
+Started POST "/labels" for 142.255.104.86 at 2019-01-22 05:00:24 +0000
+Cannot render console from 142.255.104.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by LabelsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eMd/rAzY7ekLdaBmat2p6ENkjjLVKKjhhT5qbs/GjLAu+tUF8E3Juvu9Boo1YF0vKuehOWcY8ZFuGylzshhKaA==", "label"=>{"source_name"=>"elixir-lang/elixir", "username"=>"bateskendall", "target_name"=>"repo-dymo-labels"}, "commit"=>"Create Label"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "App:EEx"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "App:EEx"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:19
+Completed 500 Internal Server Error in 137ms (ActiveRecord: 1.0ms)
+
+
+  
+NameError (undefined local variable or method `root_url' for #<GithubLabelCloner:0x007f3ea0371a78>):
+  
+app/models/github_label_cloner.rb:20:in `block in clone_github_labels'
+app/models/github_label_cloner.rb:15:in `map'
+app/models/github_label_cloner.rb:15:in `clone_github_labels'
+app/controllers/labels_controller.rb:22:in `create'
+Started POST "/labels" for 142.255.104.86 at 2019-01-22 05:02:02 +0000
+Cannot render console from 142.255.104.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by LabelsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eMd/rAzY7ekLdaBmat2p6ENkjjLVKKjhhT5qbs/GjLAu+tUF8E3Juvu9Boo1YF0vKuehOWcY8ZFuGylzshhKaA==", "label"=>{"source_name"=>"elixir-lang/elixir", "username"=>"bateskendall", "target_name"=>"repo-dymo-labels"}, "commit"=>"Create Label"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "App:EEx"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "App:EEx"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:19
+Completed 500 Internal Server Error in 111ms (ActiveRecord: 1.0ms)
+
+
+  
+NameError (undefined local variable or method `root_url' for #<GithubLabelCloner:0x007f3ea078af10>):
+  
+app/models/github_label_cloner.rb:20:in `block in clone_github_labels'
+app/models/github_label_cloner.rb:15:in `map'
+app/models/github_label_cloner.rb:15:in `clone_github_labels'
+app/controllers/labels_controller.rb:22:in `create'
+Started POST "/labels" for 142.255.104.86 at 2019-01-22 05:02:16 +0000
+Cannot render console from 142.255.104.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by LabelsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eMd/rAzY7ekLdaBmat2p6ENkjjLVKKjhhT5qbs/GjLAu+tUF8E3Juvu9Boo1YF0vKuehOWcY8ZFuGylzshhKaA==", "label"=>{"source_name"=>"elixir-lang/elixir", "username"=>"bateskendall", "target_name"=>"repo-dymo-labels"}, "commit"=>"Create Label"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "App:EEx"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "App:EEx"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:19
+Completed 500 Internal Server Error in 119ms (ActiveRecord: 1.0ms)
+
+
+  
+NameError (undefined local variable or method `root_url' for #<GithubLabelCloner:0x007f3ea0b2e950>):
+  
+app/models/github_label_cloner.rb:20:in `block in clone_github_labels'
+app/models/github_label_cloner.rb:15:in `map'
+app/models/github_label_cloner.rb:15:in `clone_github_labels'
+app/controllers/labels_controller.rb:22:in `create'
+Started POST "/labels" for 142.255.104.86 at 2019-01-22 05:04:46 +0000
+Cannot render console from 142.255.104.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by LabelsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eMd/rAzY7ekLdaBmat2p6ENkjjLVKKjhhT5qbs/GjLAu+tUF8E3Juvu9Boo1YF0vKuehOWcY8ZFuGylzshhKaA==", "label"=>{"source_name"=>"elixir-lang/elixir", "username"=>"bateskendall", "target_name"=>"repo-dymo-labels"}, "commit"=>"Create Label"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "App:EEx"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "App:EEx"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:19
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "App:Elixir"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "App:Elixir"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:19
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "App:Elixir (compiler)"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "App:Elixir (compiler)"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:19
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "App:ExUnit"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "App:ExUnit"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:19
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "App:IEx"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "App:IEx"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:19
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "App:Logger"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "App:Logger"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:19
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "App:Mix"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "App:Mix"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:19
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "Kind:Bug"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "Kind:Bug"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:19
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "Kind:Chore"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "Kind:Chore"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:19
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "Kind:Documentation"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "Kind:Documentation"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:19
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "Kind:Enhancement"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "Kind:Enhancement"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:19
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "Kind:Feature"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "Kind:Feature"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:19
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "Level:Advanced"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "Level:Advanced"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:19
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "Level:Intermediate"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "Level:Intermediate"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:19
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "Level:Starter"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "Level:Starter"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:19
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "Note:Discussion"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "Note:Discussion"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:19
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "Note:Erlang bug"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "Note:Erlang bug"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:19
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "Note:Formatter"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "Note:Formatter"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:19
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "Note:Needs more info"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "Note:Needs more info"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:19
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "Note:Open for guidance"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "Note:Open for guidance"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:19
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "Note:Unresolved"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "Note:Unresolved"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:19
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "Note:Windows"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "Note:Windows"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:19
+Redirected to https://1a04794b32a640308762113aeb521df1.vfs.cloud9.us-east-2.amazonaws.com/labels
+Completed 302 Found in 190ms (ActiveRecord: 7.3ms)
+
+
+Started GET "/labels" for 142.255.104.86 at 2019-01-22 05:04:46 +0000
+Cannot render console from 142.255.104.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by LabelsController#index as HTML
+  Rendering labels/index.html.erb within layouts/application
+  [1m[36mLabel Load (0.7ms)[0m  [1m[34mSELECT "labels".* FROM "labels"[0m
+  ↳ app/views/labels/index.html.erb:16
+  Rendered labels/index.html.erb within layouts/application (14.7ms)
+Completed 200 OK in 247ms (Views: 245.7ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/labels" for 142.255.104.86 at 2019-01-22 05:05:09 +0000
+Cannot render console from 142.255.104.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by LabelsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eMd/rAzY7ekLdaBmat2p6ENkjjLVKKjhhT5qbs/GjLAu+tUF8E3Juvu9Boo1YF0vKuehOWcY8ZFuGylzshhKaA==", "label"=>{"source_name"=>"elixir-lang/elixir", "username"=>"bateskendall", "target_name"=>"repo-dymo-labels"}, "commit"=>"Create Label"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "App:EEx"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+Completed 500 Internal Server Error in 291ms (ActiveRecord: 1.0ms)
+
+
+  
+Octokit::UnprocessableEntity (POST https://api.github.com/repos/bateskendall/repo-dymo-labels/labels: 422 - Validation Failed
+Error summary:
+  resource: Label
+  code: already_exists
+  field: name // See: https://developer.github.com/v3/issues/labels/#create-a-label):
+  
+app/models/github_label_cloner.rb:19:in `block in clone_github_labels'
+app/models/github_label_cloner.rb:15:in `map'
+app/models/github_label_cloner.rb:15:in `clone_github_labels'
+app/controllers/labels_controller.rb:22:in `create'
+Started POST "/labels" for 142.255.104.86 at 2019-01-22 05:07:19 +0000
+Cannot render console from 142.255.104.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by LabelsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eMd/rAzY7ekLdaBmat2p6ENkjjLVKKjhhT5qbs/GjLAu+tUF8E3Juvu9Boo1YF0vKuehOWcY8ZFuGylzshhKaA==", "label"=>{"source_name"=>"elixir-lang/elixir", "username"=>"bateskendall", "target_name"=>"repo-dymo-labels"}, "commit"=>"Create Label"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "App:EEx"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "App:EEx"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:19
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "App:Elixir"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "App:Elixir"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:19
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "App:Elixir (compiler)"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "App:Elixir (compiler)"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:19
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "App:ExUnit"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "App:ExUnit"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:19
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "App:IEx"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "App:IEx"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:19
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "App:Logger"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "App:Logger"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:19
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "App:Mix"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "App:Mix"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:19
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "Kind:Bug"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "Kind:Bug"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:19
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "Kind:Chore"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "Kind:Chore"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:19
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "Kind:Documentation"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "Kind:Documentation"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:19
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "Kind:Enhancement"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "Kind:Enhancement"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:19
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "Kind:Feature"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "Kind:Feature"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:19
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "Level:Advanced"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "Level:Advanced"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:19
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "Level:Intermediate"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "Level:Intermediate"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:19
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "Level:Starter"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "Level:Starter"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:19
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "Note:Discussion"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "Note:Discussion"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:19
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "Note:Erlang bug"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "Note:Erlang bug"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:19
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "Note:Formatter"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "Note:Formatter"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:19
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "Note:Needs more info"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "Note:Needs more info"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:19
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "Note:Open for guidance"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "Note:Open for guidance"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:19
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "Note:Unresolved"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "Note:Unresolved"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:19
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "Note:Windows"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/models/github_label_cloner.rb:16
+  [1m[36mLabel Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT ?[0m  [["name", "Note:Windows"], ["LIMIT", 1]]
+  ↳ app/models/github_label_cloner.rb:19
+Redirected to https://1a04794b32a640308762113aeb521df1.vfs.cloud9.us-east-2.amazonaws.com/labels
+Completed 302 Found in 198ms (ActiveRecord: 7.4ms)
+
+
+Started GET "/labels" for 142.255.104.86 at 2019-01-22 05:07:19 +0000
+Cannot render console from 142.255.104.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by LabelsController#index as HTML
+  Rendering labels/index.html.erb within layouts/application
+  [1m[36mLabel Load (0.3ms)[0m  [1m[34mSELECT "labels".* FROM "labels"[0m
+  ↳ app/views/labels/index.html.erb:16
+  Rendered labels/index.html.erb within layouts/application (12.4ms)
+Completed 200 OK in 27ms (Views: 25.4ms | ActiveRecord: 0.3ms)
+
+

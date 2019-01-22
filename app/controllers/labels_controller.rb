@@ -16,7 +16,9 @@ class LabelsController < ApplicationController
   end
 
   def create
-    @cloner = GithubLabelCloner.new(label_params[:name])
+    @cloner = GithubLabelCloner.new( label_params[:source_name], 
+                                     label_params[:username], 
+                                     label_params[:target_name] )
     @cloner.clone_github_labels
     redirect_to labels_path
   end
@@ -47,6 +49,6 @@ class LabelsController < ApplicationController
     end
 
     def label_params
-      params.require(:label).permit(:name)
+      params.require(:label).permit(:source_name, :username, :target_name)
     end
 end
